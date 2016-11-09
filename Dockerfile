@@ -17,3 +17,4 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh
     export NVM_DIR="/root/.nvm" && \
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && \
     nvm install 4.6 lts
+    npm update npm -g
