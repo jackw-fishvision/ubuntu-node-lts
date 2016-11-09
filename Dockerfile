@@ -7,7 +7,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Install packages
 RUN apt-get update
-RUN apt-get -y install wget curl git zip unzip libxml2-dev build-essential software-properties-common libssl-dev python python-dev python-pip python-virtualenv
+RUN apt-get -y install wget curl git zip unzip libxml2-dev build-essential software-properties-common libssl-dev python python-dev python-pip python-virtualenv jq coreutils
 
 # Clean apt
 RUN apt-get clean
