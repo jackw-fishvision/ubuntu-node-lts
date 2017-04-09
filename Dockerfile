@@ -28,6 +28,9 @@ RUN apt-get -y install wget \
 # Clean apt
 RUN apt-get clean
 
+# Install awscli
+RUN pip install awscli
+
 # Install node
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash && \
     export NVM_DIR="/root/.nvm" && \
