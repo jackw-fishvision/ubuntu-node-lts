@@ -23,7 +23,8 @@ RUN apt-get -y install wget \
     vim \
     jq \
     coreutils \
-    openssh-client
+    openssh-client \
+    libelf1 # Required by flow-bin
 
 # Clean apt
 RUN apt-get clean
