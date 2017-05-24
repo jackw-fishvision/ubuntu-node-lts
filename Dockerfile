@@ -24,6 +24,7 @@ RUN apt-get -y install wget \
     jq \
     coreutils \
     openssh-client \
+    apt-transport-https \
     libelf1 # Required by flow-bin
     
 RUN curl -o- https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
