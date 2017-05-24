@@ -6,8 +6,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Install packages
-RUN apt-get update
-RUN apt-get -y install wget \
+RUN apt update
+RUN apt -y install wget \
     curl \
     git \
     zip \
@@ -41,10 +41,10 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh
     npm update npm -g
 
 # Install yarn
-RUN apt-get update && apt-get install yarn
+RUN apt update && apt -y install yarn
 
 # Clean apt
-RUN apt-get clean
+RUN apt clean
 
 # Install node-gyp
 RUN yarn global add node-gyp
