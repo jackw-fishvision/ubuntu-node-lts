@@ -25,9 +25,9 @@ RUN apt-get -y install wget \
     coreutils \
     openssh-client \
     libelf1 # Required by flow-bin
-
-# Clean apt
-RUN apt-get clean
+    
+RUN curl -o- https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 # Install awscli
 RUN pip install awscli
@@ -40,9 +40,10 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh
     npm update npm -g
 
 # Install yarn
-RUN curl -o- https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update && apt-get install yarn
+
+# Clean apt
+RUN apt-get clean
 
 # Install node-gyp
 RUN yarn global add node-gyp
